@@ -1,8 +1,17 @@
 using UnityEngine;
 using System;
+using System.Collections;
+using System.Collections.Generic;
 
 public class Player : MonoBehaviour
 {
+    void OnCollisionStay2D(Collision2D collision)
+    {
+        if (collision.gameObject.tag == "Quadrado") {
+            Time.timeScale = 0f;
+            Debug.Log("Game Over.");
+        }
+    }
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {

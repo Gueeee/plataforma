@@ -6,7 +6,7 @@ public class SpawnerDeQuadrados : MonoBehaviour {
 	public GameObject quadradoPrefab;
 	public float intervalo = 1f;
 	private float tempoProximoSpawn;
-	
+
 	void Update() {
 
 		if (Time.time >= tempoProximoSpawn) {
@@ -26,5 +26,9 @@ public class SpawnerDeQuadrados : MonoBehaviour {
 		Vector2 posicaoSpawn = new Vector2(posX, Camera.main.orthographicSize + 1f);
 
 		GameObject novoQuadrado = Instantiate(quadradoPrefab, posicaoSpawn, Quaternion.identity);
-	}
+
+        quadradoPrefab.GetComponent<Rigidbody2D>().gravityScale = Random.Range(0.5f, 10f);
+
+        quadradoPrefab.GetComponent<Rigidbody2D>().gravityScale = Random.Range(0.5f, 10f);
+    }
 }
